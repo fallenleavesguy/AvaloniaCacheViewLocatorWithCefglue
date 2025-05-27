@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AvaloniaCacheViewLocator.ViewModels"
+             xmlns:webview="clr-namespace:WebViewControl;assembly=WebViewControl.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaCacheViewLocator.Views.WebView"
+             x:DataType="vm:WebViewModel">
+  <Grid RowDefinitions="Auto,Auto,*" Margin="0">
+    <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="24" FontWeight="Bold" Margin="20,10"/>
+    
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,5" Spacing="10">
+      <Button Content="Google" Command="{Binding NavigateToGoogleCommand}" />
+      <Button Content="Bing" Command="{Binding NavigateToBingCommand}" />
+      <Button Content="Baidu" Command="{Binding NavigateToBaiduCommand}" />
+      <TextBlock Text="This Web View maintains its state when navigating to other pages" 
+                Foreground="Green" VerticalAlignment="Center" Margin="20,0,0,0"/>
+    </StackPanel>
+    
+    <webview:WebView Grid.Row="2" Address="{Binding Url}" />
+  </Grid>
+</UserControl>
