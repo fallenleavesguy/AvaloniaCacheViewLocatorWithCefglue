@@ -13,8 +13,20 @@
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    </Design.DataContext>    <Grid RowDefinitions="Auto,*">
+        <!-- Navigation Buttons -->
+        <Border Grid.Row="0" Background="black" Padding="10">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="View 1" Command="{Binding NavigateToFirstCommand}" 
+                        Margin="5" Padding="10,5" />
+                <Button Content="View 2" Command="{Binding NavigateToSecondCommand}" 
+                        Margin="5" Padding="10,5" />
+                <Button Content="View 3" Command="{Binding NavigateToThirdCommand}" 
+                        Margin="5" Padding="10,5" />
+            </StackPanel>
+        </Border>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        <!-- Content Area -->
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}" />
+    </Grid>
 </Window>
