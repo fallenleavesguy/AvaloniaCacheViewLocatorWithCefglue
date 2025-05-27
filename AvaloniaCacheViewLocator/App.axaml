@@ -11,5 +11,8 @@
   
     <Application.Styles>
         <FluentTheme />
+        <!-- 添加 DataGrid 样式 -->
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
     </Application.Styles>
 </Application>
+

@@ -6,13 +6,40 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaCacheViewLocator.Views.FirstView"
              x:DataType="vm:FirstViewModel">
-  <Grid RowDefinitions="Auto,*" Margin="20">
-    <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-    <StackPanel Grid.Row="1" Spacing="10">
-      <TextBlock Text="{Binding Counter, StringFormat='Counter value: {0}'}" FontSize="18"/>
-      <Button Content="Increment Counter" Command="{ReflectionBinding IncrementCounter}" />
-      <TextBlock Text="This view will be cached and maintain its state when you navigate away" 
-               Foreground="Blue" Margin="0,20,0,0"/>
-    </StackPanel>
-  </Grid>
+    <Grid RowDefinitions="Auto,Auto,*" Margin="20">
+        <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" />
+
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="0,0,0,10" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="{Binding Counter, StringFormat='Counter value: {0}'}" FontSize="16"
+                           VerticalAlignment="Center" />
+                <Button Content="Increment Counter" Command="{ReflectionBinding IncrementCounter}" />
+                <Button Content="Add New Person" Command="{Binding AddNewPersonCommand}" />
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="2" RowDefinitions="*,Auto">
+            <!-- DataGrid for displaying mock data -->
+            <DataGrid Grid.Row="0"
+                      ItemsSource="{Binding People}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      GridLinesVisibility="All"
+                      BorderThickness="1"
+                      BorderBrush="Gray">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="180" />
+                    <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="60" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="220" />
+                    <DataGridTextColumn Header="Department" Binding="{Binding Department}" Width="140" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock Grid.Row="1"
+                       Text="This view will be cached and maintain its state when you navigate away"
+                       Foreground="Blue"
+                       Margin="0,10,0,0" />
+        </Grid>
+    </Grid>
 </UserControl>

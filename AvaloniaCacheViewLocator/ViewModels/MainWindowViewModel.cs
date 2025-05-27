@@ -26,8 +26,9 @@ public partial class MainWindowViewModel : ViewModelBase
         // Register FirstView for caching
         ViewLocator.RegisterViewForCaching<FirstViewModel>();
         
+        ViewLocator.RegisterViewForCaching<SecondViewModel>();
         // We can also register ThirdView for caching if desired
-        // ViewLocator.RegisterViewForCaching<ThirdViewModel>();
+        ViewLocator.RegisterViewForCaching<ThirdViewModel>();
     }
 
     [RelayCommand]
