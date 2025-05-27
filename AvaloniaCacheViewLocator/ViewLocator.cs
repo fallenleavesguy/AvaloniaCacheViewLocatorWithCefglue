@@ -34,7 +34,7 @@ public class ViewLocator : IDataTemplate
         if (_viewTypesToCache.Contains(viewModelName) && _cachedViews.ContainsKey(viewModelName))
         {
             var cachedControl = _cachedViews[viewModelName];
-            cachedControl.DataContext = data;
+            // cachedControl.DataContext = data;
             return cachedControl;
         }
         
