@@ -19,9 +19,7 @@ public partial class MainWindowViewModel : ViewModelBase
         
         // Register views for caching
         SetupCaching();
-    }
-
-    private void SetupCaching()
+    }    private void SetupCaching()
     {
         // Register FirstView for caching
         ViewLocator.RegisterViewForCaching<FirstViewModel>();
@@ -29,6 +27,9 @@ public partial class MainWindowViewModel : ViewModelBase
         ViewLocator.RegisterViewForCaching<SecondViewModel>();
         // We can also register ThirdView for caching if desired
         ViewLocator.RegisterViewForCaching<ThirdViewModel>();
+        
+        // Register WebView for caching to maintain browser state
+        ViewLocator.RegisterViewForCaching<WebViewModel>();
     }
 
     [RelayCommand]
@@ -47,5 +48,11 @@ public partial class MainWindowViewModel : ViewModelBase
     public void NavigateToThird()
     {
         CurrentView = new ThirdViewModel();
+    }
+    
+    [RelayCommand]
+    public void NavigateToWeb()
+    {
+        CurrentView = new WebViewModel();
     }
 }
