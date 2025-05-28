@@ -24,7 +24,7 @@
                         Margin="5" Padding="10,5" />
                 <Button Content="Web View" Command="{Binding NavigateToWebCommand}"
                         Margin="5" Padding="10,5" Foreground="LightGreen" />
-                <Button Content="Chinese Web" Command="{Binding NavigateToWeb2Command}"
+                <Button Content="other Web View" Command="{Binding NavigateToWeb2Command}"
                         Margin="5" Padding="10,5" Foreground="LightBlue" />
             </StackPanel>
         </Border>

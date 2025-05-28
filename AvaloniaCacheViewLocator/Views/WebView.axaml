@@ -13,7 +13,6 @@
     <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,5" Spacing="10">
       <Button Content="Google" Command="{Binding NavigateToGoogleCommand}" />
       <Button Content="Bing" Command="{Binding NavigateToBingCommand}" />
-      <Button Content="Baidu" Command="{Binding NavigateToBaiduCommand}" />
       <TextBlock Text="This Web View maintains its state when navigating to other pages" 
                 Foreground="Green" VerticalAlignment="Center" Margin="20,0,0,0"/>
     </StackPanel>

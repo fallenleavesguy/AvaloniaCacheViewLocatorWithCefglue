@@ -26,10 +26,4 @@ public partial class WebViewModel : ViewModelBase
     {
         Url = "https://www.bing.com";
     }
-    
-    [RelayCommand]
-    public void NavigateToBaidu()
-    {
-        Url = "https://www.baidu.com";
-    }
 }

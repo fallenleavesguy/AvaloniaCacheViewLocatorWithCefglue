@@ -5,9 +5,9 @@ namespace AvaloniaCacheViewLocator.ViewModels;
 
 public partial class WebViewModel2 : ViewModelBase
 {
-    private string _url = "https://www.qq.com";
+    private string _url = "https://www.google.com";
     
-    public string Title => "Chinese Web Browser (Cached)";
+    public string Title => "Web Browser (Cached)";
     
     public string Url 
     { 
@@ -16,20 +16,14 @@ public partial class WebViewModel2 : ViewModelBase
     }
     
     [RelayCommand]
-    public void NavigateToQQ()
+    public void NavigateToGoogle()
     {
         Url = "https://www.qq.com";
     }
     
     [RelayCommand]
-    public void NavigateTo163()
+    public void NavigateToTwitter()
     {
-        Url = "https://www.163.com";
-    }
-    
-    [RelayCommand]
-    public void NavigateToSina()
-    {
-        Url = "https://www.sina.com.cn";
+        Url = "https://www.twitter.com";
     }
 }

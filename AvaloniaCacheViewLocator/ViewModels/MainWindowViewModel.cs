@@ -31,7 +31,6 @@ public partial class MainWindowViewModel : ViewModelBase
         // Register WebView for caching to maintain browser state
         ViewLocator.RegisterViewForCaching<WebViewModel>();
         
-        // Register WebView2 for caching to maintain Chinese websites browser state
         ViewLocator.RegisterViewForCaching<WebViewModel2>();
     }
 

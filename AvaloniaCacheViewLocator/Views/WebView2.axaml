@@ -11,10 +11,9 @@
     <TextBlock Grid.Row="0" Text="{Binding Title}" FontSize="24" FontWeight="Bold" Margin="20,10"/>
     
     <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,5" Spacing="10">
-      <Button Content="QQ" Command="{Binding NavigateToQQCommand}" />
-      <Button Content="163" Command="{Binding NavigateTo163Command}" />
-      <Button Content="Sina" Command="{Binding NavigateToSinaCommand}" />
-      <TextBlock Text="This Chinese Web View is also cached" 
+      <Button Content="Google" Command="{Binding NavigateToGoogleCommand}" />
+      <Button Content="Twitter" Command="{Binding NavigateToTwitterCommand}" />
+      <TextBlock Text="This View is also cached" 
                 Foreground="Orange" VerticalAlignment="Center" Margin="20,0,0,0"/>
     </StackPanel>
     
